@@ -16,10 +16,14 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_radioButton_clicked();
+    void select_scheme_a();
 
+    void select_scheme_b();
+
+    void compute_score();
 private:
     Ui::MainWindow *ui;
+    std::string selectedScheme;
 };
 
 #endif // MAINWINDOW_H
