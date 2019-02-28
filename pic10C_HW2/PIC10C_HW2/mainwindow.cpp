@@ -6,6 +6,29 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QObject::connect( ui->spinBox_1 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
+    QObject::connect( ui->spinBox_2 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( commpute_sum() ) );
+    QObject::connect( ui->spinBox_3 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
+    QObject::connect( ui->spinBox_4 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( commpute_sum() ) );
+    QObject::connect( ui->spinBox_5 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
+    QObject::connect( ui->spinBox_6 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( commpute_sum() ) );
+    QObject::connect( ui->spinBox_7 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
+    QObject::connect( ui->spinBox_8 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( commpute_sum() ) );
+    QObject::connect( ui->spinBox_9 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
+    QObject::connect( ui->spinBox_10 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( commpute_sum() ) );
+    QObject::connect( ui->spinBox_11 ,SIGNAL( valueChanged(int) ),
+                          this, SLOT( compute_sum() )  );
 }
 
 MainWindow::~MainWindow()
@@ -28,7 +51,7 @@ void MainWindow::compute_score()
 {
     double HWscore = (ui->spinBox_1->value()+ui->spinBox_2->value()+ui->spinBox_3->value()+ui->spinBox_4->value()+
              ui->spinBox_5->value()+ui->spinBox_6->value()+ui->spinBox_7->value()+ui->spinBox_8->value())/32.0;
-    double Totalscore;
+    double Totalscore=0;
     if (selectedScheme == "schemeA")
     {
          Totalscore = HWscore+0.2*ui->spinBox_9->value()+0.2*ui->spinBox_10->value()+0.35*ui->spinBox_11->value();
