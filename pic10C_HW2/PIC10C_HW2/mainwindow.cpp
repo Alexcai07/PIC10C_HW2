@@ -12,3 +12,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_radioButton_clicked()
+{
+    ui->horizontalSlider->setValue(10);
+}
