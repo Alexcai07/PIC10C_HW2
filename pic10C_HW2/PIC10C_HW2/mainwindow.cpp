@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<algorithm>
+
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -10,23 +13,23 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect( ui->spinBox_1 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
     QObject::connect( ui->spinBox_2 ,SIGNAL( valueChanged(int) ),
-                          this, SLOT( commpute_sum() ) );
+                          this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_3 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
     QObject::connect( ui->spinBox_4 ,SIGNAL( valueChanged(int) ),
-                          this, SLOT( commpute_sum() ) );
+                          this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_5 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
     QObject::connect( ui->spinBox_6 ,SIGNAL( valueChanged(int) ),
-                          this, SLOT( commpute_sum() ) );
+                          this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_7 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
     QObject::connect( ui->spinBox_8 ,SIGNAL( valueChanged(int) ),
-                          this, SLOT( commpute_sum() ) );
+                          this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_9 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
     QObject::connect( ui->spinBox_10 ,SIGNAL( valueChanged(int) ),
-                          this, SLOT( commpute_sum() ) );
+                          this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_11 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
 }
@@ -47,7 +50,8 @@ void MainWindow::select_scheme_b()
 }
 
 
-void MainWindow::compute_score()
+
+void MainWindow::compute_sum()
 {
     double HWscore = (ui->spinBox_1->value()+ui->spinBox_2->value()+ui->spinBox_3->value()+ui->spinBox_4->value()+
              ui->spinBox_5->value()+ui->spinBox_6->value()+ui->spinBox_7->value()+ui->spinBox_8->value())/32.0;
@@ -64,4 +68,3 @@ void MainWindow::compute_score()
 
     ui->textBrowser->setText(QString::number(Totalscore));
 }
-
