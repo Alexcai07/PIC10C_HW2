@@ -21,6 +21,7 @@ private slots:
     void select_scheme_b();
 
     void compute_sum();
+
 private:
     Ui::MainWindow *ui;
     std::string selectedScheme;

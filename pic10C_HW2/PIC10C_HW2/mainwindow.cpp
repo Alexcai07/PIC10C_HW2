@@ -32,6 +32,11 @@ MainWindow::MainWindow(QWidget *parent) :
                           this, SLOT( compute_sum() ) );
     QObject::connect( ui->spinBox_11 ,SIGNAL( valueChanged(int) ),
                           this, SLOT( compute_sum() )  );
+
+    QObject::connect(ui->radioButton,SIGNAL(clicked()),
+                          this, SLOT( select_scheme_a())        );
+    QObject::connect(ui->radioButton_2,SIGNAL(clicked()),
+                          this, SLOT( select_scheme_b())        );
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +59,7 @@ void MainWindow::select_scheme_b()
 void MainWindow::compute_sum()
 {
     double HWscore = (ui->spinBox_1->value()+ui->spinBox_2->value()+ui->spinBox_3->value()+ui->spinBox_4->value()+
-             ui->spinBox_5->value()+ui->spinBox_6->value()+ui->spinBox_7->value()+ui->spinBox_8->value())/32.0;
+             ui->spinBox_5->value()+ui->spinBox_6->value()+ui->spinBox_7->value()+ui->spinBox_8->value())/(160.0/25.0);
     double Totalscore=0;
     if (selectedScheme == "schemeA")
     {
@@ -68,3 +73,5 @@ void MainWindow::compute_sum()
 
     ui->textBrowser->setText(QString::number(Totalscore));
 }
+
+
